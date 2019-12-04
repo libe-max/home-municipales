@@ -10,8 +10,8 @@ const config = {
   },
   tracking: {
     active: false,
-    format: 'libe-apps-template',
-    article: 'libe-apps-template'
+    format: 'home-municipales',
+    article: 'home-municipales-2020'
   },
   show_header: true,
   statics_url: process.env.NODE_ENV === 'production'
@@ -21,7 +21,7 @@ const config = {
     ? 'https://libe-labo-2.site/api'
     : 'http://localhost:3004/api',
   stylesheet: 'libe-apps-template.css', // The name of the css file hosted at ${statics_url}/styles/apps/
-  spreadsheet: undefined // The spreadsheet providing data to the app
+  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRcRbi5dTEu14twLM8Cguf3YltHIwBPQIcqhVYn9AfUJG3w8zSk9YuW-bohPliwh2pWvI5PUh1p2m/pub?gid=0&single=true&output=tsv'
 }
 
 export default config

@@ -13,7 +13,7 @@ export default class App extends Component {
    * * * * * * * * * * * * * * * * */
   constructor () {
     super()
-    this.c = 'lblb-some-app'
+    this.c = 'home-municipales'
     this.state = {
       loading_sheet: true,
       error_sheet: null,
@@ -159,13 +159,13 @@ export default class App extends Component {
 
     /* Display component */
     return <div className={classes.join(' ')}>
-      App is ready.<br />
-      - fill spreadsheet field in config.js<br />
-      - display it's content via state.data_sheet
+      <div className={`${c}__header`}>HEADER</div>
+      <div className={`${c}__tiles`}>TILES</div>
+      <div className={`${c}__detail`}>DETAIL</div>
       <div className='lblb-default-apps-footer'>
         <ShareArticle short iconsOnly tweet={props.meta.tweet} url={props.meta.url} />
-        <ArticleMeta
-          publishedOn='02/09/2019 17:13' updatedOn='03/09/2019 10:36' authors={[
+        <ArticleMeta publishedOn='02/09/2019 17:13'
+          updatedOn='03/09/2019 10:36' authors={[
             { name: 'Jean-Sol Partre', role: '', link: 'www.liberation.fr' },
             { name: 'Maxime Fabas', role: 'Production', link: 'lol.com' }
           ]}
