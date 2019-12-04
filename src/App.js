@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { parseTsv } from 'libe-utils'
 import Loader from 'libe-components/lib/blocks/Loader'
 import LoadingError from 'libe-components/lib/blocks/LoadingError'
 import ShareArticle from 'libe-components/lib/blocks/ShareArticle'
 import LibeLaboLogo from 'libe-components/lib/blocks/LibeLaboLogo'
 import ArticleMeta from 'libe-components/lib/blocks/ArticleMeta'
+import Paragraph from 'libe-components/lib/text-levels/Paragraph'
 
 export default class App extends Component {
   /* * * * * * * * * * * * * * * * *
@@ -19,7 +21,7 @@ export default class App extends Component {
       error_sheet: null,
       data_sheet: [],
       keystrokes_history: [],
-      konami_mode: false
+      konami_mode: false,
     }
     this.fetchSheet = this.fetchSheet.bind(this)
     this.fetchCredentials = this.fetchCredentials.bind(this)
@@ -99,7 +101,7 @@ export default class App extends Component {
       const reach = await window.fetch(this.props.spreadsheet)
       if (!reach.ok) throw reach
       const data = await reach.text()
-      const parsedData = data // Parse sheet here
+      const parsedData = parseTsv(data, [5])[0]
       this.setState({ loading_sheet: false, error_sheet: null, data_sheet: parsedData })
       return data
     } catch (error) {
@@ -147,6 +149,20 @@ export default class App extends Component {
    * * * * * * * * * * * * * * * * */
   render () {
     const { c, state, props } = this
+    const articles = this.state.data_sheet
+
+    /* Inner logic */
+    const latest13 = articles.slice(0, 13)
+    const latest4 = articles.slice(0, 4)
+    const categoriesWithRank = []
+    articles.forEach(article => {
+      const found = categoriesWithRank.find(e => e.category === article.category)
+      if (!found) categoriesWithRank.push({ category: article.category, occurences: 1 })
+      else found.occurences ++
+    })
+    const categories = categoriesWithRank.sort((a, b) => {
+      return b.occurences - a.occurences
+    }).map(e => e.category)
 
     /* Assign classes */
     const classes = [c]
@@ -159,9 +175,19 @@ export default class App extends Component {
 
     /* Display component */
     return <div className={classes.join(' ')}>
-      <div className={`${c}__header`}>HEADER</div>
-      <div className={`${c}__tiles`}>TILES</div>
-      <div className={`${c}__detail`}>DETAIL</div>
+      <div className={`${c}__header`}><Paragraph>Header</Paragraph></div>
+      <div className={`${c}__tiles ${c}__tiles_desktop`}>
+        <div className={`${c}__tiles-line-1`}>
+          <div className={`${c}__tiles-line-1-col-1`}>
+            <div className={`${c}__tile-1`}><Paragraph>Tile 1</Paragraph></div>
+          </div>
+          <div className={`${c}__tiles-line-1-col-2`}>
+            <div className={`${c}__tile-2`}><Paragraph>Tile 2</Paragraph></div>
+            <div className={`${c}__tile-3`}><Paragraph>Tile 3</Paragraph></div>
+          </div>
+        </div>
+      </div>
+      <div className={`${c}__detail`}><Paragraph>Detail</Paragraph></div>
       <div className='lblb-default-apps-footer'>
         <ShareArticle short iconsOnly tweet={props.meta.tweet} url={props.meta.url} />
         <ArticleMeta publishedOn='02/09/2019 17:13'
