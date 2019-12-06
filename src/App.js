@@ -26,7 +26,7 @@ export default class App extends Component {
     this.fetchSheet = this.fetchSheet.bind(this)
     this.fetchCredentials = this.fetchCredentials.bind(this)
     this.listenToKeyStrokes = this.listenToKeyStrokes.bind(this)
-    this.watchKonamiCode = this.watchKonamiCode.bind(this)
+    this.watchForKonamiCode = this.watchForKonamiCode.bind(this)
   }
 
   /* * * * * * * * * * * * * * * * *
@@ -128,7 +128,7 @@ export default class App extends Component {
     const currHistory = this.state.keystrokes_history
     const newHistory = [...currHistory, e.keyCode]
     this.setState({ keystrokes_history: newHistory })
-    this.watchKonamiCode()
+    this.watchForKonamiCode()
   }
 
   /* * * * * * * * * * * * * * * * *
@@ -136,7 +136,7 @@ export default class App extends Component {
    * WATCH KONAMI CODE
    *
    * * * * * * * * * * * * * * * * */
-  watchKonamiCode () {
+  watchForKonamiCode () {
     const konamiCodeStr = '38,38,40,40,37,39,37,39,66,65'
     const lastTenKeys = this.state.keystrokes_history.slice(-10)
     if (lastTenKeys.join(',') === konamiCodeStr) this.setState({ konami_mode: true })
