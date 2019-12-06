@@ -5,7 +5,10 @@ import LoadingError from 'libe-components/lib/blocks/LoadingError'
 import ShareArticle from 'libe-components/lib/blocks/ShareArticle'
 import LibeLaboLogo from 'libe-components/lib/blocks/LibeLaboLogo'
 import ArticleMeta from 'libe-components/lib/blocks/ArticleMeta'
+import Svg from 'libe-components/lib/primitives/Svg'
+import InterTitle from 'libe-components/lib/text-levels/InterTitle'
 import Paragraph from 'libe-components/lib/text-levels/Paragraph'
+import Tile from './components/Tile'
 
 export default class App extends Component {
   /* * * * * * * * * * * * * * * * *
@@ -175,16 +178,27 @@ export default class App extends Component {
 
     /* Display component */
     return <div className={classes.join(' ')}>
-      <div className={`${c}__header`}><Paragraph>Header</Paragraph></div>
+      <div className={`${c}__header`}>
+        <Svg src='/logo.svg' />
+        <InterTitle>Filtres</InterTitle>
+      </div>
       <div className={`${c}__tiles ${c}__tiles_desktop`}>
-        <div className={`${c}__tiles-line-1`}>
-          <div className={`${c}__tiles-line-1-col-1`}>
-            <div className={`${c}__tile-1`}><Paragraph>Tile 1</Paragraph></div>
+        <div className={`${c}__col-maker`}>
+          <Tile pos={1} />
+          <div className={`${c}__line-maker`}>
+            <Tile pos={2} />
+            <div className={`${c}__col-maker`}>
+              <Tile pos={3} />
+              <Tile pos={4} />
+            </div>
           </div>
-          <div className={`${c}__tiles-line-1-col-2`}>
-            <div className={`${c}__tile-2`}><Paragraph>Tile 2</Paragraph></div>
-            <div className={`${c}__tile-3`}><Paragraph>Tile 3</Paragraph></div>
-          </div>
+        </div>
+        <div className={`${c}__col-maker`}>
+          <Tile pos={5} />
+          <Tile pos={6} />
+          <Tile pos={7} />
+          <Tile pos={8} />
+          <Tile pos={9} />
         </div>
       </div>
       <div className={`${c}__detail`}><Paragraph>Detail</Paragraph></div>

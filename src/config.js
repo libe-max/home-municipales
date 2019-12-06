@@ -20,7 +20,7 @@ const config = {
   api_url: process.env.NODE_ENV === 'production'
     ? 'https://libe-labo-2.site/api'
     : 'http://localhost:3004/api',
-  stylesheet: 'libe-apps-template.css', // The name of the css file hosted at ${statics_url}/styles/apps/
+  stylesheet: 'home-municipales.css', // The name of the css file hosted at ${statics_url}/styles/apps/
   spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRcRbi5dTEu14twLM8Cguf3YltHIwBPQIcqhVYn9AfUJG3w8zSk9YuW-bohPliwh2pWvI5PUh1p2m/pub?gid=0&single=true&output=tsv'
 }
 
