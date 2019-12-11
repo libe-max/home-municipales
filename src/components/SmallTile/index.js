@@ -16,9 +16,11 @@ export default class SmallTile extends Component {
     const photoStyle = {
       backgroundImage: `url(${props.photo_url})`
     }
-    
+
     /* Assign classes */
     const classes = [c]
+
+    /* Display */
     return <div className={classes.join(' ')}>
       <a href={props.article_url} target='blank'>
         <div className={`${c}-inner`}>

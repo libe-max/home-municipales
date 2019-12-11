@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import BlockTitle from 'libe-components/lib/text-levels/BlockTitle'
-import ParagraphTitle from 'libe-components/lib/text-levels/ParagraphTitle'
+import Slug from 'libe-components/lib/text-levels/Slug'
 import Paragraph from 'libe-components/lib/text-levels/Paragraph'
 import SmallTile from '../SmallTile'
 
@@ -39,9 +38,10 @@ export default class CategoryIndex extends Component {
     classes.push(`${c}_${props.category}`)
     if (props.articles.length > state.nb_displayed) classes.push(`${c}_display-show-more`)
 
+    /* Display */
     return <div className={classes.join(' ')}>
       <div className={`${c}-title`}>
-        <BlockTitle>{props.category}</BlockTitle>
+        <Slug big>{props.category}</Slug>
       </div>
       <div className={`${c}-list`}>{
         props.articles

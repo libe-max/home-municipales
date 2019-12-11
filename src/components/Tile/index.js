@@ -31,8 +31,11 @@ export default class Tile extends Component {
     classes.push(`${c}_${props.pos}`)
     if (props.active) classes.push(`${c}_active`)
 
-    return <div className={classes.join(' ')}
-      onClick={this.toggleActive}>
+    /* Display */
+    return <div
+      className={classes.join(' ')}
+      onClick={this.toggleActive}
+    >
       <a href={props.article_url} target='blank'>
         <div className={`${c}-inner`}>
           <div className={`${c}-photo`} style={photoStyle} />
