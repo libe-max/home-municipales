@@ -8,6 +8,7 @@ import ArticleMeta from 'libe-components/lib/blocks/ArticleMeta'
 import Svg from 'libe-components/lib/primitives/Svg'
 import PageTitle from 'libe-components/lib/text-levels/PageTitle'
 import Paragraph from 'libe-components/lib/text-levels/Paragraph'
+import AnnotationTitle from 'libe-components/lib/text-levels/AnnotationTitle'
 import Tile from './components/Tile'
 import CategoryIndex from './components/CategoryIndex'
 import FiltersBlock from './components/FiltersBlock'
@@ -222,8 +223,8 @@ export default class App extends Component {
    * * * * * * * * * * * * * * * * */
   toggleScrolledState (e) {
     const pScrollY = window.LBLB_GLOBAL.pScrollY || 0
-    if (pScrollY < 80 && window.scrollY >= 80) this.setState({ scrolled: true })
-    else if (pScrollY >= 80 && window.scrollY < 80) this.setState({ scrolled: false })
+    if (pScrollY < 180 && window.scrollY >= 180) this.setState({ scrolled: true })
+    else if (pScrollY >= 180 && window.scrollY < 180) this.setState({ scrolled: false })
     window.LBLB_GLOBAL.pScrollY = window.scrollY
   }
 
@@ -290,13 +291,21 @@ export default class App extends Component {
         </div>
       </div>
 
-      {/* Fixed header */}
+      {/* Scroll to top */}
       <div
-        className={`${c}__fixed-header`}
+        className={`${c}__scroll-to-top`}
+        onClick={e => this.activateCategory(null)}>
+        <Svg src='./logo.svg' />
+        <AnnotationTitle>Retour à la une</AnnotationTitle>
+      </div>
+
+      {/* Fixed header mobile */}
+      <div
+        className={`${c}__fixed-header-mobile`}
         style={{ top: window.LBLB_GLOBAL.nav_height }}>
         <div
           onClick={e => this.activateCategory(null)}
-          className={`${c}__fixed-header-logo`}>
+          className={`${c}__fixed-header-mobile-logo`}>
           <Paragraph>
             À la une<br />
             des municipales
@@ -304,7 +313,7 @@ export default class App extends Component {
         </div>
         <div
           onClick={e => this.activateCategory(null)}
-          className={`${c}__fixed-header-filters`}>
+          className={`${c}__fixed-header-mobile-filters`}>
           <Paragraph>↑ Filtres</Paragraph>
         </div>
       </div>
@@ -373,7 +382,7 @@ export default class App extends Component {
       {/* Categories detail */}
       <div className={`${c}__categories`}>
         <div className={`${c}__categories-title`}>
-          <Paragraph>Retrouvez tous les articles par thème</Paragraph>
+          <Paragraph>Retrouvez tous nos articles sur</Paragraph>
         </div>
         <div className={`${c}__categories-list`}>{
           categories.map(category => {
