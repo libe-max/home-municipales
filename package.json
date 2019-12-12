@@ -2,7 +2,7 @@
   "name": "libe-apps-template",
   "version": "0.2.3",
   "private": true,
-  "homepage": "/apps/maxime/home-municipales-2020",
+  "homepage": "/apps/2019/12/home-municipales-2020",
   "dependencies": {
     "libe-components": "^1.2.0",
     "libe-utils": "^1.0.1",

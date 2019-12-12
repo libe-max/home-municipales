@@ -5,11 +5,11 @@ const config = {
   meta: {
     author: 'Libé Labo',
     title: 'Libération - Municipales 2020',
-    url: 'https://www.liberation.fr/apps/maxime/municipales-2020',
+    url: 'https://www.liberation.fr/apps/2019/12/home-municipales-2020',
     description: '',
     image: '',
-    xiti_id: 'test-home-municipales',
-    tweet: 'Some tweet text'
+    xiti_id: 'home-municipales',
+    tweet: ''
   },
   tracking: {
     active: false,
