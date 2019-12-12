@@ -1,3 +1,6 @@
+const currentProtocol = typeof window !== 'undefined' ? window.location.protocol : 'http:'
+const currentHostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost'
+
 const config = {
   meta: {
     author: 'Libé Labo',
@@ -16,12 +19,12 @@ const config = {
   show_header: true,
   statics_url: process.env.NODE_ENV === 'production'
     ? 'https://www.liberation.fr/apps/static'
-    : `${window.location.protocol}//${window.location.hostname}:3003`,
+    : `${currentProtocol}//${currentHostname}:3003`,
   api_url: process.env.NODE_ENV === 'production'
     ? 'https://libe-labo-2.site/api'
-    : `${window.location.protocol}//${window.location.hostname}:3004/api`,
+    : `${currentProtocol}//${currentHostname}:3004/api`,
   stylesheet: 'home-municipales.css',
   spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRcRbi5dTEu14twLM8Cguf3YltHIwBPQIcqhVYn9AfUJG3w8zSk9YuW-bohPliwh2pWvI5PUh1p2m/pub?gid=0&single=true&output=tsv'
 }
 
-export default config
+module.exports = config
