@@ -64,7 +64,6 @@ export default class CategoryIndex extends Component {
     if (props.articles.length > state.nb_displayed) classes.push(`${c}_display-show-more`)
 
     /* Display */
-    console.log(props.category)
     return <div className={classes.join(' ')}>
       <div className={`${c}-title`}>
         <CategoryTitle category={props.category} />
