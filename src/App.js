@@ -120,8 +120,9 @@ export default class App extends Component {
       const reach = await window.fetch(this.props.spreadsheet)
       if (!reach.ok) throw reach
       const data = await reach.text()
-      const parsedData = parseTsv(data, [6])[0]
+      const parsedData = parseTsv(data, [7])[0]
       this.setState({ loading_sheet: false, error_sheet: null, data_sheet: parsedData })
+      document.querySelector('#temp-header').innerHTML = ''
       return data
     } catch (error) {
       if (error.status) {

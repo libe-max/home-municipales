@@ -4,7 +4,7 @@ const currentHostname = typeof window !== 'undefined' ? window.location.hostname
 const config = {
   meta: {
     author: 'Libé Labo',
-    title: 'Libération - Municipales 2020 : toute l\'actu des élections à la une',
+    title: 'Municipales 2020 : toute l\'actu des élections à la une – Libération',
     url: 'https://www.liberation.fr/apps/2019/12/a-la-une-des-municipales',
     description: 'Les élections municipales 2020 auront lieu les 15 et 22 mars. Suivez les principaux enjeux de la campagne dans les plus grandes villes (Paris, Lyon, Marseille…) et pour chaque parti.',
     image: '',
