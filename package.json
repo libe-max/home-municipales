@@ -2,7 +2,7 @@
   "name": "libe-apps-template",
   "version": "0.2.3",
   "private": true,
-  "homepage": "/apps/2019/12/a-la-une-des-municipales",
+  "homepage": "/apps/les-dossiers-du-fil-vert",
   "dependencies": {
     "libe-components": "^1.2.0",
     "libe-utils": "^1.0.1",

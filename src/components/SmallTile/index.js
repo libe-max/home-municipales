@@ -3,6 +3,7 @@ import Slug from 'libe-components/lib/text-levels/Slug'
 import Paragraph from 'libe-components/lib/text-levels/Paragraph'
 import Annotation from 'libe-components/lib/text-levels/Annotation'
 import LogoGlyph from 'libe-components/lib/blocks/LogoGlyph'
+import JSXInterpreter from 'libe-components/lib/logic/JSXInterpreter'
 
 export default class SmallTile extends Component {
   constructor () {
@@ -28,7 +29,9 @@ export default class SmallTile extends Component {
         <div className={`${c}-inner`}>
           <div className={`${c}-titles`}>
             <div className={`${c}-title`}>
-              <Paragraph>{props.display_title || props.original_title || 'Article sans titre'}</Paragraph>
+              <Paragraph>
+                <JSXInterpreter content={props.display_title || props.original_title || 'Article sans titre'} />
+              </Paragraph>
             </div>
             <div className={`${c}-date`}>
               <Annotation>

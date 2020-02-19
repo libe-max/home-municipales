@@ -4,9 +4,9 @@ const currentHostname = typeof window !== 'undefined' ? window.location.hostname
 const config = {
   meta: {
     author: 'Libé Labo',
-    title: 'Municipales 2020 : toute l\'actu des élections à la une – Libération',
-    url: 'https://www.liberation.fr/apps/2019/12/a-la-une-des-municipales',
-    description: 'Les élections municipales 2020 auront lieu les 15 et 22 mars. Suivez les principaux enjeux de la campagne dans les plus grandes villes (Paris, Lyon, Marseille…) et pour chaque parti.',
+    title: 'Les dossiers du Fil vert',
+    url: 'https://www.liberation.fr/apps/les-dossiers-du-fil-vert',
+    description: '«Libération» met l\'accent sur l\'écologie et décrypte chaque mois une thématique de l\'actualité environnementale dans un dossier de fond.',
     image: '',
     xiti_id: 'home-municipales',
     tweet: ''
@@ -24,7 +24,7 @@ const config = {
     ? 'https://libe-labo-2.site/api'
     : `${currentProtocol}//${currentHostname}:3004/api`,
   stylesheet: 'home-municipales.css',
-  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRcRbi5dTEu14twLM8Cguf3YltHIwBPQIcqhVYn9AfUJG3w8zSk9YuW-bohPliwh2pWvI5PUh1p2m/pub?gid=0&single=true&output=tsv'
+  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSATdwtrrsA0OFWg7h3OpLcQ-m4TupxbYufhrL1Qi73t-YA3Y7SUX3AHOQXI_V0kNotSNV0oOkD9r0v/pub?output=tsv'
 }
 
 module.exports = config

@@ -120,7 +120,7 @@ export default class App extends Component {
       const reach = await window.fetch(this.props.spreadsheet)
       if (!reach.ok) throw reach
       const data = await reach.text()
-      const parsedData = parseTsv(data, [7])[0]
+      const parsedData = parseTsv(data, [8])[0]
       this.setState({ loading_sheet: false, error_sheet: null, data_sheet: parsedData })
       document.querySelector('#temp-header').innerHTML = ''
       return data
@@ -242,23 +242,29 @@ export default class App extends Component {
     const categoriesWithRank = []
     articles.forEach(article => {
       const found = categoriesWithRank.find(e => e.category === article.category)
-      if (!found) categoriesWithRank.push({ category: article.category, occurences: 1 })
-      else found.occurences++
+      if (!found) { 
+        categoriesWithRank.push({
+          category: article.category,
+          category_name: article.category_name,
+          occurences: 1
+        })
+       } else {
+         found.occurences++
+       }
     })
-    const categories = categoriesWithRank.sort((a, b) => {
-      return b.occurences - a.occurences
-    }).map(e => e.category)
-    const art1 = articles[0]
-    const art2 = articles[1]
-    const art3 = articles[2]
-    const art4 = articles[3]
-    const art5 = articles[4]
-    const art6 = articles[5]
-    const art7 = articles[6]
-    const art8 = articles[7]
+    const categories = [...categoriesWithRank]
+    const currentCategory = categories[0] ? categories[0].category : null
+    const articlesInCurrentCategory = articles.filter(art => art.category === currentCategory)
+    const nbOfTilesToDisplay = articlesInCurrentCategory.length >= 6 && articlesInCurrentCategory.length <= 12
+      ? articlesInCurrentCategory.length
+      : articlesInCurrentCategory.length < 6
+      ? 6
+      : 12
+    const hideCurrentCategoryInSmallTiles = nbOfTilesToDisplay === articlesInCurrentCategory.length
 
     /* Assign classes */
     const classes = [c]
+    classes.push(`${c}_${nbOfTilesToDisplay}-tiles`)
     if (state.loading_sheet) classes.push(`${c}_loading`)
     if (state.error_sheet) classes.push(`${c}_error`)
     if (state.scrolled) classes.push(`${c}_scrolled`)
@@ -281,11 +287,14 @@ export default class App extends Component {
           <div
             className={`${c}__header-filters-title`}
             onClick={e => this.activateCategory(null)}>
-            <PageTitle>À la une des municipales</PageTitle>
+            <PageTitle>Les dossiers du fil vert</PageTitle>
           </div>
           <div className={`${c}__header-filters-list`}>
             <FiltersBlock
-              categories={categories}
+              categories={categories.map(e => ({
+                category_name: e.category_name,
+                category: e.category
+              })).slice(0, 1)}
               activateCategory={this.activateCategory}
               active={state.active_category} />
           </div>
@@ -308,8 +317,8 @@ export default class App extends Component {
           onClick={e => this.activateCategory(null)}
           className={`${c}__fixed-header-mobile-logo`}>
           <Paragraph>
-            À la une<br />
-            des municipales
+            Les dossiers<br />
+            du fil vert
           </Paragraph>
         </div>
         <div
@@ -320,80 +329,53 @@ export default class App extends Component {
       </div>
 
       {/* Tiles */}
-      <div className={`${c}__tiles`}>
-        <div className={`${c}__col-maker`}>
-          <Tile
-            pos={1}
-            {...art1}
-            textSizes={{ big: true }}
-            dataCategory={art1.category}
-            active={this.isInFilter(art1)} />
-          <div className={`${c}__line-maker`}>
-            <Tile
-              pos={2}
-              {...art2}
+      <div className={`${c}__tiles`}>{
+        articlesInCurrentCategory.map((article, i) => {
+          return i === 0
+            ? <Tile
+              pos={i + 1}
+              {...article}
+              textSizes={{ big: true }}
+              key={article.display_title}
+              dataCategory={article.category}
+              active={this.isInFilter(article)} />
+            : i < 4
+            ?  <Tile
+              pos={i + 1}
+              {...article}
               textSizes={{ regular: true }}
-              dataCategory={art2.category}
-              active={this.isInFilter(art2)} />
-            <div className={`${c}__col-maker`}>
-              <Tile
-                pos={3}
-                {...art3}
-                textSizes={{ small: true }}
-                dataCategory={art3.category}
-                active={this.isInFilter(art3)} />
-              <Tile
-                pos={4}
-                {...art4}
-                textSizes={{ small: true }}
-                dataCategory={art4.category}
-                active={this.isInFilter(art4)} />
-            </div>
-          </div>
-        </div>
-
-        <div className={`${c}__col-maker`}>
-          <Tile
-            pos={5}
-            {...art5}
-            textSizes={{ small: true }}
-            dataCategory={art5.category}
-            active={this.isInFilter(art5)} />
-          <Tile
-            pos={6}
-            {...art6}
-            textSizes={{ small: true }}
-            dataCategory={art6.category}
-            active={this.isInFilter(art6)} />
-          <Tile
-            pos={7}
-            {...art7}
-            textSizes={{ small: true }}
-            dataCategory={art7.category}
-            active={this.isInFilter(art7)} />
-          <Tile
-            pos={8}
-            {...art8}
-            textSizes={{ small: true }}
-            dataCategory={art8.category}
-            active={this.isInFilter(art8)} />
-        </div>
-      </div>
+              key={article.display_title}
+              dataCategory={article.category}
+              active={this.isInFilter(article)} />
+            : <Tile
+              pos={i + 1}
+              {...article}
+              textSizes={{ small: true }}
+              key={article.display_title}
+              dataCategory={article.category}
+              active={this.isInFilter(article)} />
+        })
+      }</div>
 
       {/* Categories detail */}
       <div className={`${c}__categories`}>
-        <div className={`${c}__categories-title`}>
-          <Paragraph>Retrouvez tous nos articles sur</Paragraph>
-        </div>
+        {!hideCurrentCategoryInSmallTiles
+          && categories.length !== 1
+          && <div className={`${c}__categories-title`}>
+            <Paragraph>Retrouvez tous les dossiers du fil vert</Paragraph>
+          </div>}
         <div className={`${c}__categories-list`}>{
-          categories.map(category => {
-            const categoryArticles = articles
-              .filter(art => art.category === category)
-            return <CategoryIndex
-              key={category}
-              articles={categoryArticles}
-              category={category} />
-          })
+          categories
+            .map(category => {
+              if (hideCurrentCategoryInSmallTiles
+                && category.category === currentCategory) return
+              const categoryArticles = articles
+                .filter(art => art.category === category.category)
+              return <CategoryIndex
+                key={category.category}
+                articles={categoryArticles}
+                category={category} />
+            })
         }
         </div>
       </div>

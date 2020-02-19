@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slug from 'libe-components/lib/text-levels/Slug'
 import BlockTitle from 'libe-components/lib/text-levels/BlockTitle'
+import JSXInterpreter from 'libe-components/lib/logic/JSXInterpreter'
 
 export default class Tile extends Component {
   /* * * * * * * * * * * * * * * * *
@@ -41,10 +42,14 @@ export default class Tile extends Component {
           <div className={`${c}-photo`} style={photoStyle} />
           <div className={`${c}-titles`}>
             <div className={`${c}-slug-and-subscribers`}>
-              <div className={`${c}-slug`}><Slug>{props.category}</Slug></div>
+              {/*<div className={`${c}-slug`}><Slug>{props.category}</Slug></div>*/}
               <div className={`${c}-subscribers-only`}><Slug>Abonnés</Slug></div>
             </div>
-            <div className={`${c}-title`}><BlockTitle {...props.textSizes}>{props.display_title}</BlockTitle></div>
+            <div className={`${c}-title`}>
+              <BlockTitle {...props.textSizes}>
+                <JSXInterpreter content={props.display_title} />
+              </BlockTitle>
+            </div>
           </div>
         </div>
       </a>
