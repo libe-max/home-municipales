@@ -15,6 +15,81 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@libe" />
   <meta name="twitter:creator" content="@libe" />
+  <style type="text/css">
+    .home-municipales__header {
+      width: 100%;
+      height: 7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 0 1rem;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    .home-municipales__header-logo {
+      cursor: pointer;
+    }
+
+    .home-municipales__header-logo .lblb-svg svg,
+    .home-municipales__header-logo img {
+      height: 7rem;
+    }
+
+    .home-municipales__header-filters-title {
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    .home-municipales__header-filters-title
+      .lblb-page-title h1 {
+        font-family: 'Libe-Sans-Semicondensed';
+        font-size: 2rem;
+        line-height: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02rem;
+        font-weight: 800;
+    }
+    .home-municipales__header-filters-title
+      .lblb-page-title h1 {
+        color: #004DAD;
+    }
+    @media screen and (max-width: 82rem) {
+      .home-municipales__header-logo .lblb-svg svg,
+      .home-municipales__header-logo img {
+        height: 5rem;
+      }
+    }
+    @media screen and (max-width: 64rem) {
+      .home-municipales__header {
+        height: unset;
+        flex-direction: column;
+        margin: 1rem 0;
+        padding: 0 .5rem;
+      }
+
+      .home-municipales__header-logo {
+        margin-bottom: 1rem;
+      }
+
+      .home-municipales__header-logo .lblb-svg svg,
+      .home-municipales__header-logo img {
+        height: 4rem;
+      }
+    .home-municipales__header-filters-title
+        .lblb-page-title h1 {
+          font-size: 1.625rem;
+          line-height: 2rem;
+      }
+    }
+    @media screen and (max-width: 40rem) {
+      .home-municipales__header-filters-title
+        .lblb-page-title h1 {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- React app -->
