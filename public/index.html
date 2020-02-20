@@ -16,6 +16,31 @@
   <meta name="twitter:site" content="@libe" />
   <meta name="twitter:creator" content="@libe" />
   <style type="text/css">
+    #temp-header {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+    .home-municipales {
+      width: 100%;
+      max-width: 80rem;
+      margin: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 82rem) {
+      .home-municipales {
+        max-width: 60rem;
+      }
+    }
+
+    @media screen and (max-width: 64rem) {
+      .home-municipales {
+        margin: 0;
+      }
+    }
+
     .home-municipales__header {
       width: 100%;
       height: 7rem;
@@ -41,6 +66,7 @@
       cursor: pointer;
       margin-bottom: 1rem;
     }
+    
     .home-municipales__header-filters-title
       .lblb-page-title h1 {
         font-family: 'Libe-Sans-Semicondensed';
@@ -50,16 +76,19 @@
         letter-spacing: 0.02rem;
         font-weight: 800;
     }
+    
     .home-municipales__header-filters-title
       .lblb-page-title h1 {
-        color: #004DAD;
+        color: #07AB84;
     }
+    
     @media screen and (max-width: 82rem) {
       .home-municipales__header-logo .lblb-svg svg,
       .home-municipales__header-logo img {
         height: 5rem;
       }
     }
+    
     @media screen and (max-width: 64rem) {
       .home-municipales__header {
         height: unset;
@@ -76,12 +105,14 @@
       .home-municipales__header-logo img {
         height: 4rem;
       }
+    
     .home-municipales__header-filters-title
         .lblb-page-title h1 {
           font-size: 1.625rem;
           line-height: 2rem;
       }
     }
+    
     @media screen and (max-width: 40rem) {
       .home-municipales__header-filters-title
         .lblb-page-title h1 {
@@ -100,7 +131,7 @@
       </div>
       <div class="home-municipales__header-filters">
         <div class="home-municipales__header-filters-title">
-          <div class="lblb-page-title"><h1>À la une des municipales</h1></div>
+          <div class="lblb-page-title"><h1>Les dossiers du fil vert</h1></div>
         </div>
       </div>
     </div>
@@ -108,14 +139,8 @@
   <div id="libe-labo-app-root"></div>
   <div id="temp-footer" style="display: none; flex-direction: column; align-items: center; max-width: 62rem; margin: 0 auto; padding: 0 1rem;">
     <div style="margin-bottom: 1rem; text-align: center;">
-      <div class="lblb-block-title lblb-block-title_small"><h4>Retrouvez tous nos dossiers thématiques</h4></div>
-      <!-- <p class="block-title"><b>Retrouvez tous nos dossiers thématiques</b></p> -->
     </div>
     <div style="display: flex; justify-content: space-around; width: 100%; margin-bottom: 3rem;">
-      <p class="lblb-paragraph lblb-paragraph_small"><a target='_blank' href='https://www.liberation.fr/elections-municipales-2020-Paris,101166'>Paris</a></p>
-      <p class="lblb-paragraph lblb-paragraph_small"><a target='_blank' href='https://www.liberation.fr/elections-municipales-2020-Marseille,101167'>Marseille</a></p>
-      <p class="lblb-paragraph lblb-paragraph_small"><a target='_blank' href='https://www.liberation.fr/elections-municipales-2020-gauche,101169'>Gauche</a></p>
-      <p class="lblb-paragraph lblb-paragraph_small"><a target='_blank' href='https://www.liberation.fr/municipales-2020-LREM,101170'>LREM</a></p>
     </div>
   </div>
   <!-- Scripts -->
