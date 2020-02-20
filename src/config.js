@@ -8,12 +8,12 @@ const config = {
     url: 'https://www.liberation.fr/apps/les-dossiers-du-fil-vert',
     description: '«Libération» met l\'accent sur l\'écologie et décrypte chaque mois une thématique de l\'actualité environnementale dans un dossier de fond.',
     image: 'https://www.liberation.fr/apps/les-dossiers-du-fil-vert/social.png',
-    xiti_id: 'home-municipales',
+    xiti_id: 'les-dossiers-du-fil-vert',
     tweet: ''
   },
   tracking: {
     active: false,
-    format: 'home-municipales',
+    format: 'les-dossiers-du-fil-vert',
     article: 'home-municipales-2020'
   },
   show_header: true,
