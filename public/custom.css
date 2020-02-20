@@ -110,6 +110,11 @@
     color: #FFFFFF;
 }
 
+.home-municipales__fixed-header-mobile-filters
+  .lblb-paragraph {
+    display: none;
+}
+
 /* * * * * * * * * * * * * * * * *
  *
  * Tiles

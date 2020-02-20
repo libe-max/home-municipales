@@ -253,7 +253,10 @@ export default class App extends Component {
        }
     })
     const categories = [...categoriesWithRank]
-    const currentCategory = categories[0] ? categories[0].category : null
+    const currentCategory = categories[0] ? categories[0].category : ''
+    const currentCategoryName = categories[0] ? categories[0].category_name : ''
+    const noCapNoHtmlCurrentCategoryName = `${(currentCategoryName[0] || '').toLowerCase()}${currentCategoryName.slice(1).replace(/&nbsp;/igm, ' ')}`
+    const tweetText = `A lire ce mois-ci dans Les dossiers du fil vert : ${noCapNoHtmlCurrentCategoryName} via @libe`
     const articlesInCurrentCategory = articles.filter(art => art.category === currentCategory)
     const nbOfTilesToDisplay = articlesInCurrentCategory.length >= 6 && articlesInCurrentCategory.length <= 12
       ? articlesInCurrentCategory.length
@@ -382,7 +385,11 @@ export default class App extends Component {
 
       {/* Footer */}
       <div className='lblb-default-apps-footer'>
-        <ShareArticle short iconsOnly tweet={props.meta.tweet} url={props.meta.url} />
+        <ShareArticle
+          short
+          iconsOnly
+          tweet={tweetText}
+          url={props.meta.url} />
         <LibeLaboLogo target='blank' />
       </div>
     </div>
