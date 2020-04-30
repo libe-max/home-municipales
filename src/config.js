@@ -7,7 +7,7 @@ const config = {
     title: 'Les dossiers du Fil vert',
     url: 'https://www.liberation.fr/apps/les-dossiers-du-fil-vert',
     description: '«Libération» met l\'accent sur l\'écologie et décrypte chaque mois une thématique de l\'actualité environnementale dans un dossier de fond.',
-    image: 'https://www.liberation.fr/apps/les-dossiers-du-fil-vert/social.jpg',
+    image: '/apps/les-dossiers-du-fil-vert/social.jpg',
     xiti_id: 'les-dossiers-du-fil-vert',
     tweet: ''
   },
@@ -24,7 +24,7 @@ const config = {
     ? 'https://libe-labo-2.site/api'
     : `${currentProtocol}//${currentHostname}:3004/api`,
   stylesheet: 'home-municipales.css',
-  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSATdwtrrsA0OFWg7h3OpLcQ-m4TupxbYufhrL1Qi73t-YA3Y7SUX3AHOQXI_V0kNotSNV0oOkD9r0v/pub?output=tsv'
+  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQVTpXiMkmWiUGeIqFPoagvKjALYlJWUx7EhdSsM9RQB5TpS-NvnmWdjgGNJV7yOo6AaE60fLsQ_7IV/pub?output=tsv'
 }
 
 module.exports = config

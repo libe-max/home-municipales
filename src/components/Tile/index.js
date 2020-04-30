@@ -42,7 +42,7 @@ export default class Tile extends Component {
           <div className={`${c}-photo`} style={photoStyle} />
           <div className={`${c}-titles`}>
             <div className={`${c}-slug-and-subscribers`}>
-              {/*<div className={`${c}-slug`}><Slug>{props.category}</Slug></div>*/}
+              <div className={`${c}-slug`}><Slug>{props.slug}</Slug></div>
               <div className={`${c}-subscribers-only`}><Slug>Abonnés</Slug></div>
             </div>
             <div className={`${c}-title`}>
