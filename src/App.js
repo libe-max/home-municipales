@@ -121,7 +121,11 @@ export default class App extends Component {
       if (!reach.ok) throw reach
       const data = await reach.text()
       const parsedData = parseTsv(data, [9])[0]
-      this.setState({ loading_sheet: false, error_sheet: null, data_sheet: parsedData })
+      this.setState({
+        loading_sheet: false,
+        error_sheet: null,
+        data_sheet: parsedData
+      })
       document.querySelector('#temp-header').innerHTML = ''
       return data
     } catch (error) {
@@ -258,12 +262,13 @@ export default class App extends Component {
     const noCapNoHtmlCurrentCategoryName = `${(currentCategoryName[0] || '').toLowerCase()}${currentCategoryName.slice(1).replace(/&nbsp;/igm, ' ')}`
     const tweetText = `A lire ce mois-ci dans Les dossiers du fil vert : ${noCapNoHtmlCurrentCategoryName} via @libe`
     const articlesInCurrentCategory = articles.filter(art => art.category === currentCategory)
-    const nbOfTilesToDisplay = articlesInCurrentCategory.length >= 6 && articlesInCurrentCategory.length <= 12
+    const nbOfTilesToDisplay = articlesInCurrentCategory.length >= 6 && articlesInCurrentCategory.length <= 15
       ? articlesInCurrentCategory.length
       : articlesInCurrentCategory.length < 6
       ? 6
-      : 12
-    const hideCurrentCategoryInSmallTiles = nbOfTilesToDisplay === articlesInCurrentCategory.length
+      : 15
+    // const hideCurrentCategoryInSmallTiles = nbOfTilesToDisplay === articlesInCurrentCategory.length
+    const hideCurrentCategoryInSmallTiles = true
 
     /* Assign classes */
     const classes = [c]

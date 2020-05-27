@@ -474,6 +474,154 @@
   height: 18rem;
 }
 
+/* 13 tiles layout */
+.home-municipales_13-tiles .home-municipales__tile_1 {
+  width: 60%;
+  height: 36rem;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_2,
+.home-municipales_13-tiles .home-municipales__tile_3 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_4 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_5 {
+  width: 60%;
+  height: 22rem;
+  clear: both;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_6 {
+  width: 40%;
+  height: 22rem;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_7,
+.home-municipales_13-tiles .home-municipales__tile_9,
+.home-municipales_13-tiles .home-municipales__tile_10,
+.home-municipales_13-tiles .home-municipales__tile_13 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_13-tiles .home-municipales__tile_8,
+.home-municipales_13-tiles .home-municipales__tile_11,
+.home-municipales_13-tiles .home-municipales__tile_12 {
+  width: 40%;
+  height: 18rem;
+}
+
+/* 14 tiles layout */
+.home-municipales_14-tiles .home-municipales__tile_1 {
+  width: 60%;
+  height: 36rem;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_2,
+.home-municipales_14-tiles .home-municipales__tile_3 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_4 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_5 {
+  width: 60%;
+  height: 22rem;
+  clear: both;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_6 {
+  width: 40%;
+  height: 22rem;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_7,
+.home-municipales_14-tiles .home-municipales__tile_9,
+.home-municipales_14-tiles .home-municipales__tile_10,
+.home-municipales_14-tiles .home-municipales__tile_12,
+.home-municipales_14-tiles .home-municipales__tile_13,
+.home-municipales_14-tiles .home-municipales__tile_14 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_14-tiles .home-municipales__tile_8,
+.home-municipales_14-tiles .home-municipales__tile_11 {
+  width: 40%;
+  height: 18rem;
+}
+
+/* 15 tiles layout */
+.home-municipales_15-tiles .home-municipales__tile_1 {
+  width: 60%;
+  height: 36rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_2,
+.home-municipales_15-tiles .home-municipales__tile_3 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_4 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_5 {
+  width: 60%;
+  height: 22rem;
+  clear: both;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_6 {
+  width: 40%;
+  height: 22rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_7 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_8 {
+  width: 60%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_9 {
+  width: 20%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_10,
+.home-municipales_15-tiles .home-municipales__tile_11 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_12 {
+  width: 40%;
+  height: 18rem;
+}
+
+.home-municipales_15-tiles .home-municipales__tile_13,
+.home-municipales_15-tiles .home-municipales__tile_14,
+.home-municipales_15-tiles .home-municipales__tile_15 {
+  width: 20%;
+  height: 18rem;
+}
+
 .home-municipales__tile_1 .home-municipales__tile-photo,
 .home-municipales__tile_2 .home-municipales__tile-photo,
 .home-municipales__tile_3 .home-municipales__tile-photo,
@@ -482,7 +630,7 @@
 .home-municipales__tile_6 .home-municipales__tile-photo,
 .home-municipales__tile_7 .home-municipales__tile-photo,
 .home-municipales__tile_8 .home-municipales__tile-photo {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 @media screen and (max-width: 64rem) {
@@ -495,22 +643,25 @@
   .home-municipales__tile_2,
   .home-municipales__tile_3,
   .home-municipales__tile_4 {
-    height: 20rem !important;
+    height: 24rem !important;
   }
   .home-municipales__tile_5,
   .home-municipales__tile_6,
   .home-municipales__tile_7,
   .home-municipales__tile_8 {
-    width: 50% !important;
-    height: 16rem !important;
+    width: 100% !important;
+    height: 20rem !important;
     display: block;
   }
   .home-municipales__tile_9,
   .home-municipales__tile_10,
   .home-municipales__tile_11,
-  .home-municipales__tile_12 {
-    width: 50% !important;
-    height: 12rem !important;
+  .home-municipales__tile_12,
+  .home-municipales__tile_13,
+  .home-municipales__tile_14,
+  .home-municipales__tile_15 {
+    width: 100% !important;
+    height: 20rem !important;
   }
 }
 
@@ -524,22 +675,25 @@
   .home-municipales__tile_2,
   .home-municipales__tile_3,
   .home-municipales__tile_4 {
-    height: 16rem !important;
+    height: 18rem !important;
   }
   .home-municipales__tile_5,
   .home-municipales__tile_6,
   .home-municipales__tile_7,
   .home-municipales__tile_8 {
     width: 100% !important;
-    height: 12rem !important;
+    height: 16rem !important;
     display: block;
   }
 
   .home-municipales__tile_9,
   .home-municipales__tile_10,
   .home-municipales__tile_11,
-  .home-municipales__tile_12 {
-    width: 50% !important;
+  .home-municipales__tile_12,
+  .home-municipales__tile_13,
+  .home-municipales__tile_14,
+  .home-municipales__tile_15 {
+    width: 100% !important;
     height: 10rem !important;
   }
 }
