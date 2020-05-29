@@ -265,7 +265,12 @@ export default class App extends Component {
 
     /* Load & errors */
     if (state.loading_sheet) return <div className={classes.join(' ')}><div className='lblb-default-apps-loader'><Loader /></div></div>
-    if (state.error_sheet) return <div className={classes.join(' ')}><div className='lblb-default-apps-error'><LoadingError /></div></div>
+    if (state.error_sheet) return <div className={classes.join(' ')}>
+      <div className='lblb-default-apps-error'>
+        {state.error_sheet.toString()}
+        <LoadingError />
+      </div>
+    </div>
 
     /* Display component */
     return <div className={classes.join(' ')}>
