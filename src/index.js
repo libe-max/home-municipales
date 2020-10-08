@@ -111,6 +111,8 @@ class AppWrapper extends Component {
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={description} />
         <meta name='twitter:image' content={image} />
+        {/* Libé Labo logger */}
+        <script type='text/javascript' src={`${statics_url}/scripts/logger.js`} />
         {/* Libé styles */}
         <link rel='stylesheet' href={`${statics_url}/styles/liberation.css`} />
         {/* Libe Labo styles */}
