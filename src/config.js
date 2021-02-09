@@ -24,9 +24,10 @@ const config = {
     ? 'https://libe-labo-2.site/api'
     : `${currentProtocol}//${currentHostname}:3004/api`,
   stylesheet: 'home-municipales.css',
-  spreadsheet: process.env.NODE_ENV === 'production'
-    ? 'https://proxydata.liberation.fr/proxy/spreadsheets/1IAGELcncOM7gCZ7B3QXHjHdFNoWDXSGJfWG5ZTVYxa8?out=tsv'
-    : `${currentProtocol}//${currentHostname}:3004/proxy/spreadsheets/1IAGELcncOM7gCZ7B3QXHjHdFNoWDXSGJfWG5ZTVYxa8?out=tsv`
+  // spreadsheet: process.env.NODE_ENV === 'production'
+  //   ? 'https://proxydata.liberation.fr/proxy/spreadsheets/1IAGELcncOM7gCZ7B3QXHjHdFNoWDXSGJfWG5ZTVYxa8?out=tsv'
+  //   : `${currentProtocol}//${currentHostname}:3004/proxy/spreadsheets/1IAGELcncOM7gCZ7B3QXHjHdFNoWDXSGJfWG5ZTVYxa8?out=tsv`
+  spreadsheet: './data.tsv'
 }
 
 module.exports = config
